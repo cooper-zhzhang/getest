@@ -1,0 +1,36 @@
+#!/bin/bash
+find_go_mod_dir() {
+	local current_dir=$(pwd)
+	while [ "$current_dir" != "/" ]; do
+		if [ -f "$current_dir/go.mod" ]; then
+			echo "$current_dir"
+			break
+		fi
+		current_dir=$current_dir/..
+		#current_dir=$(dirname "$current_dir")
+	done
+}
+
+# 接收两个参数，文件名称和函数名
+file_name=$1
+func_name=$2
+
+# 编译生成Test.test文件
+go test -c -o Test.test $file_name #-test.run $func_name
+
+cur_dir=$(pwd)
+# 找到go.mod的目录并进入
+dir_2=$(find_go_mod_dir)
+if [ -z "$dir_2" ]; then
+	echo "not found go.mod"
+	exit 1
+fi
+cd $dir_2
+
+# 执行Test.test文件
+$cur_dir/Test.test -test.run $func_name
+# $cur_dir/Test.test -test.v -test.run $func_name
+
+# 回到原先的目录
+cd $cur_dir
+rm Test.test
