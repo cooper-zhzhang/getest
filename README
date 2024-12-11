@@ -1,0 +1,53 @@
+# Gotest Script
+
+A custom script to simplify the execution of Go tests on specific files and functions, ensuring that tests are run from the correct project path.
+
+## Overview
+The go test command executes by default in the path where the file is located, but in the project, there are many configurations in the project's default path. The gotest script solves the execution path issue.
+The `gotest` script is designed to address the common issue of `go test` commands not being executed in the correct project directory. It takes two arguments: the file name and the function name, and runs the test accordingly.
+
+## Usage
+
+To use the `gotest` script, simply pass the file and function name as arguments:
+
+```bash
+./gotest <file.go> <FunctionName>
+Installation
+Clone the repository containing the gotest script.
+Change to the directory containing the script.
+Make the script executable with the following command:
+bash
+chmod +x gotest
+Optionally, move the script to a directory in your PATH for easier access.
+Example
+To run a test on the example_test.go file for the TestExample function, you would use:
+
+bash
+./gotest example_test.go TestExample
+Contributing
+Feel free to contribute to the project by submitting pull requests or filing issues.
+
+License
+MIT License
+
+Copyright (c) [2024] [cooper-zhzhang]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
