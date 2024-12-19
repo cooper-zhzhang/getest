@@ -11,7 +11,7 @@ The `gotest` script is designed to address the common issue of `go test` command
 To use the `gotest` script, simply pass the file and function name as arguments:
 
 ```bash
-./gotest <file.go> <FunctionName>
+./gotest <FunctionName>
 Installation
 Clone the repository containing the gotest script.
 Change to the directory containing the script.
@@ -23,7 +23,7 @@ Example
 To run a test on the example_test.go file for the TestExample function, you would use:
 
 bash
-./gotest example_test.go TestExample
+./gotest TestExample
 Contributing
 Feel free to contribute to the project by submitting pull requests or filing issues.
 

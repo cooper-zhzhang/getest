@@ -11,9 +11,8 @@ find_go_mod_dir() {
 	done
 }
 
-# 接收两个参数，文件名称和函数名
-file_name=$1
-func_name=$2
+# 接收1个参数，文件名称和函数名
+file_name=$2
 
 # 编译生成Test.test文件
 go test -c -o Test.test #$file_name -test.run $func_name
